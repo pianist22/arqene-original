@@ -1,0 +1,59 @@
+/* ---------- Hamburger (checkbox toggler) ---------- */
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide checkbox but keep it accessible to label click */
+.navToggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.toggleLabel {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxtoggler {
+  width: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  cursor: pointer;
+}
+
+/* Shared line style */
+.line {
+  height: 0.22rem;
+  border-radius: 999px;
+  transition: background-color 320ms ease, transform 500ms ease;
+}
+
+/* 3 visible dashes (same color in both states as per your updated design) */
+.checkboxtogglerLight .line {
+  background: rgba(15, 15, 18, 0.94);
+}
+
+.checkboxtogglerDark .line {
+  background: rgba(15, 15, 18, 0.94);
+}
+
+/* Cross animation when checked */
+.navToggle:checked + .toggleLabel .line1 {
+  transform: rotate(45deg) translateY(0.55rem) translateX(0.45rem);
+}
+
+.navToggle:checked + .toggleLabel .line2 {
+  transform: rotate(-45deg) translateY(0rem) translateX(0.1rem);
+}
+
+.navToggle:checked + .toggleLabel .line3 {
+  transform: scaleX(0);
+  transform-origin: left;
+}
